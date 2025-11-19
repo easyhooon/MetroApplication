@@ -20,7 +20,7 @@ import dev.zacsweers.metro.SingleIn
 @Inject
 class DefaultUserRepository(
     // Uncomment this line to reproduce Metro bug:
-    private val notificationDataSource: NotificationDataSource,
+    // private val notificationDataSource: NotificationDataSource,
 ) : UserRepository {
     override suspend fun getUserProfile(): Result<String> {
         return Result.success("User Profile")

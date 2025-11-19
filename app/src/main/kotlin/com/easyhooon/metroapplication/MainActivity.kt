@@ -16,13 +16,15 @@ import dev.zacsweers.metro.binding
 @ContributesIntoMap(AppScope::class, binding = binding<Activity>())
 @ActivityKey(MainActivity::class)
 @Inject
-class MainActivity : ComponentActivity() {
+class MainActivity(
+    private val presenter: MainPresenter,
+) : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
                 Surface {
-                    Text("Metro Bug Reproduction")
+                    Text("Metro Bug Reproduction\n\nPresenter injected: ${presenter != null}")
                 }
             }
         }
