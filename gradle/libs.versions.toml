@@ -72,7 +72,7 @@ firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics
 firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
 firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
 firebase-config = { group = "com.google.firebase", name = "firebase-config" }
-#firebase-installations = { group = "com.google.firebase", name = "firebase-installations" }
+firebase-installations = { group = "com.google.firebase", name = "firebase-installations" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -35,9 +35,11 @@ dependencies {
     implementations(
         projects.core.di,
         projects.core.data.api,
+        projects.core.datastore.api,
 
         platform(libs.firebase.bom),
         libs.firebase.config,
         libs.firebase.messaging,
+        libs.firebase.installations,
     )
 }

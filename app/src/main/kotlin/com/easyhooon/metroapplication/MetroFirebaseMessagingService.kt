@@ -2,6 +2,7 @@ package com.easyhooon.metroapplication
 
 import android.app.Service
 import android.util.Log
+import com.easyhooon.metroapplication.core.data.api.repository.UserRepository
 import com.easyhooon.metroapplication.core.di.ServiceKey
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -13,7 +14,9 @@ import dev.zacsweers.metro.binding
 @ContributesIntoMap(AppScope::class, binding = binding<Service>())
 @ServiceKey(MetroFirebaseMessagingService::class)
 @Inject
-class MetroFirebaseMessagingService : FirebaseMessagingService() {
+class MetroFirebaseMessagingService(
+    private val userRepository: UserRepository,
+) : FirebaseMessagingService() {
 
     override fun onNewToken(token: String) {
         super.onNewToken(token)

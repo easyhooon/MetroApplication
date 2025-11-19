@@ -4,7 +4,11 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import com.easyhooon.metroapplication.core.datastore.api.datasource.NotificationDataSource
+import com.easyhooon.metroapplication.core.datastore.api.datasource.OnboardingDataSource
 import com.easyhooon.metroapplication.core.datastore.api.datasource.TokenDataSource
+import com.easyhooon.metroapplication.core.datastore.impl.datasource.DefaultNotificationDataSource
+import com.easyhooon.metroapplication.core.datastore.impl.datasource.DefaultOnboardingDataSource
 import com.easyhooon.metroapplication.core.datastore.impl.datasource.DefaultTokenDataSource
 import com.easyhooon.metroapplication.core.di.ApplicationContext
 import com.easyhooon.metroapplication.core.di.DataScope
@@ -59,4 +63,10 @@ interface DataStoreGraph {
 
     @Binds
     val DefaultTokenDataSource.bind: TokenDataSource
+
+    @Binds
+    val DefaultNotificationDataSource.bind: NotificationDataSource
+
+    @Binds
+    val DefaultOnboardingDataSource.bind: OnboardingDataSource
 }
