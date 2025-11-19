@@ -23,6 +23,7 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core:1.13.1")
-    implementation(libs.circuit.runtime)
+    implementations(
+        libs.circuit.runtime,
+    )
 }

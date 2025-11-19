@@ -27,10 +27,12 @@ android {
 }
 
 dependencies {
-    implementation(projects.core.di)
-    implementation(projects.core.data.api)
+    implementations(
+        projects.core.di,
+        projects.core.data.api,
 
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.config)
-    implementation(libs.firebase.messaging)
+        platform(libs.firebase.bom),
+        libs.firebase.config,
+        libs.firebase.messaging,
+    )
 }

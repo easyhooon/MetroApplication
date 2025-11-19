@@ -8,6 +8,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:designsystem"))
-    implementation(project(":core:common"))
+    implementations(
+        projects.core.designsystem,
+        projects.core.common,
+    )
 }

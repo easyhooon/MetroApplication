@@ -20,7 +20,3 @@ android {
         jvmTarget = "17"
     }
 }
-
-dependencies {
-    implementation("androidx.core:core:1.13.1")
-}

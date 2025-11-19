@@ -21,7 +21,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -58,22 +58,23 @@ dependencies {
         libs.circuit.foundation,
         libs.circuit.runtime,
         libs.compose.effects,
+
+        libs.androidx.core.ktx,
+        libs.androidx.lifecycle.runtime.ktx,
+        libs.androidx.activity.compose,
+        libs.androidx.startup,
+        platform(libs.androidx.compose.bom),
+        libs.androidx.compose.ui,
+        libs.androidx.compose.ui.graphics,
+        libs.androidx.compose.ui.tooling.preview,
+        libs.androidx.compose.material3,
+
+        platform(libs.firebase.bom),
+        libs.firebase.analytics,
+        libs.firebase.crashlytics,
+        libs.firebase.messaging,
     )
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.startup)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.ui.graphics)
-    implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.compose.material3)
-
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics)
-    implementation(libs.firebase.crashlytics)
-    implementation(libs.firebase.messaging)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
