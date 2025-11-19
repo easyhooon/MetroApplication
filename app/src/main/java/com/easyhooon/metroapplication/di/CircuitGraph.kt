@@ -33,6 +33,7 @@ interface CircuitGraph {
             return Circuit.Builder()
                 .addPresenterFactories(presenterFactories)
                 .addUiFactories(uiFactories)
+                .setAnimatedNavDecoratorFactory(CrossFadeNavDecoratorFactory())
                 .setOnUnavailableContent { screen, modifier ->
                     val circuit = LocalCircuit.current
                     BasicText(
