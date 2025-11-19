@@ -60,6 +60,11 @@ dependencies {
         projects.feature.screens,
         projects.feature.splash,
         projects.feature.main,
+        projects.feature.home,
+        projects.feature.detail,
+        projects.feature.search,
+        projects.feature.settings,
+        projects.feature.login,
 
         libs.circuit.foundation,
         libs.circuit.runtime,
