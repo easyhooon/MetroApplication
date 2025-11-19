@@ -1,4 +1,4 @@
-package com.easyhooon.metroapplication.feature
+package com.easyhooon.metroapplication.feature.main
 
 import android.app.Activity
 import android.os.Bundle

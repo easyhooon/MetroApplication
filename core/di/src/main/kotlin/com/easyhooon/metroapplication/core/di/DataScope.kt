@@ -1,6 +1,9 @@
 package com.easyhooon.metroapplication.core.di
 
-import dev.zacsweers.metro.Scope
-
-@Scope
-annotation class DataScope
+/**
+ * Scope for data layer dependencies including:
+ * - Network (Retrofit, OkHttp, Interceptors)
+ * - DataStore and DataSources
+ * - Repository implementations
+ */
+abstract class DataScope private constructor()
