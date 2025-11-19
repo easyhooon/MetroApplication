@@ -1,26 +1,38 @@
-import com.android.build.gradle.LibraryExtension
-import com.easyhooon.metroapplication.convention.Plugins
+import com.google.devtools.ksp.gradle.KspExtension
+import com.easyhooon.metroapplication.convention.api
 import com.easyhooon.metroapplication.convention.applyPlugins
-import com.easyhooon.metroapplication.convention.configureAndroid
-import com.easyhooon.metroapplication.convention.configureCompose
+import com.easyhooon.metroapplication.convention.implementation
+import com.easyhooon.metroapplication.convention.ksp
+import com.easyhooon.metroapplication.convention.libs
+import com.easyhooon.metroapplication.convention.project
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
 
 internal class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             applyPlugins(
-                Plugins.ANDROID_LIBRARY,
-                Plugins.KOTLIN_ANDROID,
-                Plugins.KOTLIN_COMPOSE,
-                Plugins.KSP,
-                Plugins.METRO,
+                "metro.android.library",
+                "metro.android.library.compose",
+                "dev.zacsweers.metro",
+                "com.google.devtools.ksp",
             )
 
-            extensions.configure<LibraryExtension> {
-                configureAndroid(this)
-                configureCompose(this)
+            extensions.configure<KspExtension> {
+                arg("circuit.codegen.mode", "metro")
+            }
+
+            dependencies {
+                implementation(project(path = ":core:di"))
+                implementation(project(path = ":feature:screens"))
+
+                implementation(libs.circuit.foundation)
+                implementation(libs.circuit.runtime)
+
+                api(libs.circuit.codegen.annotation)
+                ksp(libs.circuit.codegen.ksp)
             }
         }
     }
