@@ -25,6 +25,8 @@ internal class AndroidFeatureConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
+                implementation(project(path = ":core:common"))
+                implementation(project(path = ":core:model"))
                 implementation(project(path = ":core:di"))
                 implementation(project(path = ":feature:screens"))
 

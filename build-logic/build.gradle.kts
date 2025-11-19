@@ -19,6 +19,7 @@ gradlePlugin {
         "android.library" to "AndroidLibraryConventionPlugin",
         "android.library.compose" to "AndroidLibraryComposeConventionPlugin",
         "android.feature" to "AndroidFeatureConventionPlugin",
+        "jvm.library" to "JvmLibraryConventionPlugin",
     )
 
     plugins {

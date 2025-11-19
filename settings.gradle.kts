@@ -24,6 +24,8 @@ rootProject.name = "MetroApplication"
 include(":app")
 
 // Core modules
+include(":core:model")
+include(":core:common")
 include(":core:di")
 include(":core:datastore-api")
 include(":core:datastore-impl")

@@ -4,6 +4,7 @@ kotlin = "2.2.21"
 ksp = "2.3.0"
 metro = "0.7.6"
 circuit = "0.30.0"
+composeStableMarker = "1.0.5"
 coreKtx = "1.10.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -25,6 +26,7 @@ circuitx-gesture-navigation = { group = "com.slack.circuit", name = "circuitx-ge
 circuitx-overlays = { group = "com.slack.circuit", name = "circuitx-overlays", version.ref = "circuit" }
 circuit-codegen-annotation = { group = "com.slack.circuit", name = "circuit-codegen-annotations", version.ref = "circuit" }
 circuit-codegen-ksp = { group = "com.slack.circuit", name = "circuit-codegen", version.ref = "circuit" }
+compose-stable-marker = { group = "com.github.skydoves", name = "compose-stable-marker", version.ref = "composeStableMarker" }
 ksp-gradle-plugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -57,6 +59,7 @@ metro-android-application-compose = { id = "metro.android.application.compose", 
 metro-android-library = { id = "metro.android.library", version = "unspecified" }
 metro-android-library-compose = { id = "metro.android.library.compose", version = "unspecified" }
 metro-android-feature = { id = "metro.android.feature", version = "unspecified" }
+metro-jvm-library = { id = "metro.jvm.library", version = "unspecified" }
 
 [bundles]
 androidx-compose = [
