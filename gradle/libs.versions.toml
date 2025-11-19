@@ -18,6 +18,9 @@ lifecycleRuntimeKtx = "2.6.1"
 activityCompose = "1.9.2"
 composeBom = "2025.07.00"
 gradleDependencyHandlerExtensions = "1.1.0"
+kotlinDetekt = "1.23.8"
+kotlinKtlintGradle = "11.6.1"
+kotlinKtlintSource = "0.50.0"
 
 [libraries]
 android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
@@ -66,6 +69,8 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 metro = { id = "dev.zacsweers.metro", version.ref = "metro" }
 compose-stability-analyzer = { id = "com.github.skydoves.compose.stability.analyzer", version.ref = "composeStabilityAnalyzer" }
 gradle-dependency-handler-extensions = { id = "land.sungbin.dependency.handler.extensions", version.ref = "gradleDependencyHandlerExtensions" }
+kotlin-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "kotlinDetekt" }
+kotlin-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "kotlinKtlintGradle" }
 
 # Convention plugins
 metro-android-application = { id = "metro.android.application", version = "unspecified" }
