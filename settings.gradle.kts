@@ -33,6 +33,8 @@ include(":core:network")
 include(":core:data-api")
 include(":core:data-impl")
 include(":core:ocr")
+include(":core:designsystem")
+include(":core:ui")
 
 // Feature modules
 include(":feature:screens")
