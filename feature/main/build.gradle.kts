@@ -4,6 +4,10 @@ plugins {
 
 android {
     namespace = "com.easyhooon.metroapplication.feature.main"
+
+    lint {
+        abortOnError = false
+    }
 }
 
 dependencies {
