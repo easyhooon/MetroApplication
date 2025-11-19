@@ -36,6 +36,7 @@ dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:data-api"))
     implementation(project(":core:data-impl"))
+    implementation(project(":core:ocr"))
 
     // Feature modules
     implementation(project(":feature:screens"))

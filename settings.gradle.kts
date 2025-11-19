@@ -32,6 +32,7 @@ include(":core:datastore-impl")
 include(":core:network")
 include(":core:data-api")
 include(":core:data-impl")
+include(":core:ocr")
 
 // Feature modules
 include(":feature:screens")
