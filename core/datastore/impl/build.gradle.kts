@@ -23,8 +23,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:di"))
-    implementation(project(":core:datastore:api"))
+    implementation(projects.core.di)
+    implementation(projects.core.datastore.api)
 
     implementation("androidx.core:core:1.13.1")
     implementation("androidx.datastore:datastore-preferences:1.1.1")

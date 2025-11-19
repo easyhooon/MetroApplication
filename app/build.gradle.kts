@@ -38,23 +38,23 @@ ksp {
 }
 
 dependencies {
-    // Core modules
-    implementation(project(":core:di"))
-    implementation(project(":core:datastore:api"))
-    implementation(project(":core:datastore:impl"))
-    implementation(project(":core:network"))
-    implementation(project(":core:data:api"))
-    implementation(project(":core:data:impl"))
-    implementation(project(":core:ocr"))
+    implementations(
+        projects.core.di,
+        projects.core.datastore.api,
+        projects.core.datastore.impl,
+        projects.core.network,
+        projects.core.data.api,
+        projects.core.data.impl,
+        projects.core.ocr,
 
-    // Feature modules
-    implementation(project(":feature:screens"))
-    implementation(project(":feature:splash"))
-    implementation(project(":feature:main"))
+        projects.feature.screens,
+        projects.feature.splash,
+        projects.feature.main,
 
-    implementation(libs.circuit.foundation)
-    implementation(libs.circuit.runtime)
-    implementation(libs.compose.effects)
+        libs.circuit.foundation,
+        libs.circuit.runtime,
+        libs.compose.effects,
+    )
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

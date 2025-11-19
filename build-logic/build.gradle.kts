@@ -2,6 +2,7 @@
 
 plugins {
     `kotlin-dsl`
+    alias(libs.plugins.gradle.dependency.handler.extensions)
 }
 
 dependencies {

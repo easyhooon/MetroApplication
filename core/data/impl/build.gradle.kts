@@ -23,8 +23,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:di"))
-    implementation(project(":core:data:api"))
+    implementation(projects.core.di)
+    implementation(projects.core.data.api)
 
     implementation("androidx.core:core:1.13.1")
 }
