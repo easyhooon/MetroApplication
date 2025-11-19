@@ -14,9 +14,15 @@ import dev.zacsweers.metro.Provides
 
 private const val TOKEN_DATASTORE_NAME = "TOKENS_DATASTORE"
 private const val ONBOARDING_DATASTORE_NAME = "ONBOARDING_DATASTORE"
+private const val BOOK_RECENT_SEARCH_DATASTORE_NAME = "BOOK_RECENT_SEARCH_DATASTORE"
+private const val LIBRARY_RECENT_SEARCH_DATASTORE_NAME = "LIBRARY_RECENT_SEARCH_DATASTORE"
+private const val NOTIFICATION_DATASTORE_NAME = "NOTIFICATION_DATASTORE"
 
 private val Context.tokenDataStore by preferencesDataStore(name = TOKEN_DATASTORE_NAME)
 private val Context.onboardingDataStore by preferencesDataStore(name = ONBOARDING_DATASTORE_NAME)
+private val Context.bookRecentSearchDataStore by preferencesDataStore(name = BOOK_RECENT_SEARCH_DATASTORE_NAME)
+private val Context.libraryRecentSearchDataStore by preferencesDataStore(name = LIBRARY_RECENT_SEARCH_DATASTORE_NAME)
+private val Context.notificationDataStore by preferencesDataStore(name = NOTIFICATION_DATASTORE_NAME)
 
 @ContributesTo(DataScope::class)
 interface DataStoreGraph {
@@ -32,6 +38,24 @@ interface DataStoreGraph {
     fun provideOnboardingDataStore(
         @ApplicationContext context: Context,
     ): DataStore<Preferences> = context.onboardingDataStore
+
+    @BookRecentSearchDataStore
+    @Provides
+    fun provideBookRecentSearchDataStore(
+        @ApplicationContext context: Context,
+    ): DataStore<Preferences> = context.bookRecentSearchDataStore
+
+    @LibraryRecentSearchDataStore
+    @Provides
+    fun provideLibraryRecentSearchDataStore(
+        @ApplicationContext context: Context,
+    ): DataStore<Preferences> = context.libraryRecentSearchDataStore
+
+    @NotificationDataStore
+    @Provides
+    fun provideNotificationDataStore(
+        @ApplicationContext context: Context,
+    ): DataStore<Preferences> = context.notificationDataStore
 
     @Binds
     val DefaultTokenDataSource.bind: TokenDataSource

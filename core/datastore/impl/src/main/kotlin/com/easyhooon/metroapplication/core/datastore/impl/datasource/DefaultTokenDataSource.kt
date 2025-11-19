@@ -4,6 +4,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
+import com.easyhooon.metroapplication.core.common.crypto.CryptoManager
 import com.easyhooon.metroapplication.core.datastore.api.datasource.TokenDataSource
 import com.easyhooon.metroapplication.core.datastore.impl.di.TokenDataStore
 import com.easyhooon.metroapplication.core.di.DataScope
@@ -16,29 +17,32 @@ import kotlinx.coroutines.flow.map
 @Inject
 class DefaultTokenDataSource(
     @TokenDataStore private val dataStore: DataStore<Preferences>,
+    private val cryptoManager: CryptoManager,
 ) : TokenDataSource {
 
     override suspend fun getAccessToken(): String {
         return dataStore.data.map { preferences ->
-            preferences[ACCESS_TOKEN_KEY] ?: ""
+            val encrypted = preferences[ACCESS_TOKEN_KEY] ?: ""
+            if (encrypted.isEmpty()) "" else cryptoManager.decrypt(encrypted)
         }.first()
     }
 
     override suspend fun setAccessToken(token: String) {
         dataStore.edit { preferences ->
-            preferences[ACCESS_TOKEN_KEY] = token
+            preferences[ACCESS_TOKEN_KEY] = cryptoManager.encrypt(token)
         }
     }
 
     override suspend fun getRefreshToken(): String {
         return dataStore.data.map { preferences ->
-            preferences[REFRESH_TOKEN_KEY] ?: ""
+            val encrypted = preferences[REFRESH_TOKEN_KEY] ?: ""
+            if (encrypted.isEmpty()) "" else cryptoManager.decrypt(encrypted)
         }.first()
     }
 
     override suspend fun setRefreshToken(token: String) {
         dataStore.edit { preferences ->
-            preferences[REFRESH_TOKEN_KEY] = token
+            preferences[REFRESH_TOKEN_KEY] = cryptoManager.encrypt(token)
         }
     }
 
