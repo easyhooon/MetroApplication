@@ -86,6 +86,9 @@ dependencies {
         libs.firebase.messaging,
     )
 
+    api(libs.circuit.codegen.annotation)
+    ksp(libs.circuit.codegen.ksp)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
