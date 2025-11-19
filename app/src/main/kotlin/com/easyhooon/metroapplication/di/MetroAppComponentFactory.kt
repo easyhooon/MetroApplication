@@ -4,7 +4,6 @@ import android.app.Activity
 import android.app.Application
 import android.app.Service
 import android.content.Intent
-import android.util.Log
 import androidx.annotation.Keep
 import androidx.core.app.AppComponentFactory
 import com.easyhooon.metroapplication.MetroApplication

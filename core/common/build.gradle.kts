@@ -8,6 +8,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:model"))
-    implementation(project(":core:network"))
+    implementation(projects.core.model)
+    implementation(projects.core.network)
+    implementation(projects.core.di)
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
 }

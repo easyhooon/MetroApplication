@@ -12,6 +12,10 @@ android {
         minSdk = 28
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -26,5 +30,7 @@ dependencies {
     implementation(projects.core.di)
     implementation(projects.core.data.api)
 
-    implementation("androidx.core:core:1.13.1")
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.config)
+    implementation(libs.firebase.messaging)
 }

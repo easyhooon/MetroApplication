@@ -7,10 +7,4 @@ import dev.zacsweers.metro.createGraphFactory
 
 class MetroApplication : Application() {
     val appGraph by lazy { createGraphFactory<AppGraph.Factory>().create(this) }
-
-    override fun onCreate() {
-        super.onCreate()
-
-        ComposeStabilityAnalyzer.setEnabled(BuildConfig.DEBUG)
-    }
 }
