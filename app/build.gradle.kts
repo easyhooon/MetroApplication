@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.metro.android.application.compose)
     alias(libs.plugins.metro)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.stability.analyzer)
 }
 
 android {
@@ -22,6 +23,14 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        buildConfig = true
+    }
+}
+
+composeStabilityAnalyzer {
+    enabled.set(true)
 }
 
 ksp {
@@ -45,6 +54,7 @@ dependencies {
 
     implementation(libs.circuit.foundation)
     implementation(libs.circuit.runtime)
+    implementation(libs.compose.effects)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
