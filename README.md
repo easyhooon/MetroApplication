@@ -88,17 +88,26 @@ AppScope:
                              └─ DataStoreGraph.provideNotificationDataStore()
 ```
 
-## Root Cause Analysis
+## Error Analysis
 
-The bug occurs in Metro's error reporting mechanism:
+The Metro compiler crashes with the following error:
 
-1. Metro detects a missing binding in the dependency graph
-2. Calls `reportMissingBinding()` to generate a helpful error message
+```
+ClassCastException: class IrErrorTypeImpl cannot be cast to class IrSimpleType
+	at IrBindingGraph.findSimilarBindings(IrBindingGraph.kt:519)
+	at MutableBindingGraph.reportMissingBinding(BindingGraph.kt:457)
+```
+
+**Confirmed behavior:**
+1. Metro detects an issue in the dependency graph
+2. Attempts to call `reportMissingBinding()` to generate an error message
 3. Calls `findSimilarBindings()` to suggest alternatives
-4. During type checking, tries to cast `IrErrorTypeImpl` to `IrSimpleType`
-5. **Crashes before telling the user what's actually missing**
+4. **Crashes during type checking before reporting the actual issue**
 
-The actual missing binding is likely related to the qualified `@NotificationDataStore DataStore<Preferences>`, but Metro crashes before it can report this.
+**Unable to determine:**
+- The actual root cause (Metro crashes before reporting it)
+- Whether it's a missing binding or a different issue
+- The exact component that causes the problem
 
 ## Key Files
 
@@ -124,7 +133,8 @@ The actual missing binding is likely related to the qualified `@NotificationData
 
 ## Notes
 
-- This is a **compiler bug**, not a configuration issue
-- The dependency graph itself is valid
-- Metro's error reporting crashes before identifying the actual problem
-- Workaround: Avoid using qualified DataStore in cross-scope dependency chains
+- Metro compiler crashes during error reporting, preventing identification of the actual issue
+- The crash occurs in `IrBindingGraph.findSimilarBindings()` when trying to suggest alternatives
+- Repository injection works fine (proven by Presenter and Service injection)
+- The bug is specifically triggered when Repository depends on NotificationDataSource
+- Unable to determine the root cause due to the compiler crash
