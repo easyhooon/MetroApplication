@@ -31,7 +31,16 @@ class DefaultUserRepository(
 ) : UserRepository
 ```
 
-**This proves that cross-scope injection (AppScope → DataScope) works fine.**
+**Current dependency graph (works fine):**
+```
+MainActivity → MainPresenter → UserRepository ✅
+TestService → UserRepository ✅
+```
+
+**This proves that:**
+- Cross-scope injection (AppScope → DataScope) works fine
+- Repository injection into Presenter/Service works fine
+- The bug is NOT related to the binding method itself
 
 Run build:
 ```bash
@@ -95,8 +104,9 @@ The actual missing binding is likely related to the qualified `@NotificationData
 
 - **App Module**:
   - `app/di/AppGraph.kt` - Main dependency graph
+  - `app/MainActivity.kt` - Activity that injects MainPresenter
+  - `app/MainPresenter.kt` - Presenter that injects UserRepository (proves Repository injection works)
   - `app/TestService.kt` - Service that injects UserRepository
-  - `app/MainActivity.kt` - Activity with Metro DI
 
 - **Data Layer**:
   - `core/data/impl/repository/DefaultUserRepository.kt` - **Toggle this to reproduce bug**
