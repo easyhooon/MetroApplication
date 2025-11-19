@@ -18,6 +18,8 @@ import kotlin.reflect.KClass
 )
 interface AppGraph {
 
+    val testClass: com.easyhooon.metroapplication.TestClass
+
     @Multibinds(allowEmpty = true)
     val activityProviders: Map<KClass<out Activity>, Provider<Activity>>
 

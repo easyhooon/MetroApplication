@@ -2,10 +2,6 @@ plugins {
     alias(libs.plugins.metro.android.application)
     alias(libs.plugins.metro.android.application.compose)
     alias(libs.plugins.metro)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.compose.stability.analyzer)
-    alias(libs.plugins.google.service)
-    alias(libs.plugins.firebase.crashlytics)
 }
 
 android {
@@ -37,63 +33,22 @@ android {
     }
 }
 
-composeStabilityAnalyzer {
-    enabled.set(true)
-}
-
-ksp {
-    arg("circuit.codegen.mode", "metro")
-}
-
 dependencies {
+    // Minimal dependencies for Metro bug reproduction
     implementations(
         projects.core.di,
-        projects.core.common,
-        projects.core.designsystem,
-        projects.core.datastore.api,
-        projects.core.datastore.impl,
-        projects.core.network,
         projects.core.data.api,
         projects.core.data.impl,
-        projects.core.ocr,
-
-        projects.feature.screens,
-        projects.feature.splash,
-        projects.feature.main,
-        projects.feature.home,
-        projects.feature.detail,
-        projects.feature.search,
-        projects.feature.settings,
-        projects.feature.login,
-
-        libs.circuit.foundation,
-        libs.circuit.runtime,
-        libs.compose.effects,
+        projects.core.datastore.api,
+        projects.core.datastore.impl,
 
         libs.androidx.core.ktx,
         libs.androidx.lifecycle.runtime.ktx,
         libs.androidx.activity.compose,
-        libs.androidx.startup,
         platform(libs.androidx.compose.bom),
         libs.androidx.compose.ui,
-        libs.androidx.compose.ui.graphics,
-        libs.androidx.compose.ui.tooling.preview,
         libs.androidx.compose.material3,
-
-        platform(libs.firebase.bom),
-        libs.firebase.analytics,
-        libs.firebase.crashlytics,
-        libs.firebase.messaging,
     )
 
-    api(libs.circuit.codegen.annotation)
-    ksp(libs.circuit.codegen.ksp)
-
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
-    debugImplementation(libs.androidx.compose.ui.tooling)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
 }

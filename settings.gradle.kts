@@ -27,26 +27,10 @@ dependencyResolutionManagement {
 }
 include(":app")
 
-// Core modules
-include(":core:model")
-include(":core:common")
+// Core modules (minimal for bug reproduction)
 include(":core:di")
 include(":core:datastore:api")
 include(":core:datastore:impl")
-include(":core:network")
 include(":core:data:api")
 include(":core:data:impl")
-include(":core:ocr")
-include(":core:designsystem")
-include(":core:ui")
-
-// Feature modules
-include(":feature:screens")
-include(":feature:splash")
-include(":feature:main")
-include(":feature:home")
-include(":feature:detail")
-include(":feature:search")
-include(":feature:settings")
-include(":feature:login")
  

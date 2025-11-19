@@ -25,7 +25,6 @@ android {
 dependencies {
     implementations(
         projects.core.di,
-        projects.core.common,
         projects.core.datastore.api,
 
         libs.androidx.datastore.preferences,
