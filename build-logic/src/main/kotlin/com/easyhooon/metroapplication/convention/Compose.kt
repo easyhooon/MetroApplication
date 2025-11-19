@@ -25,7 +25,7 @@ internal fun Project.configureCompose(
 
     dependencies {
         implementation(platform(libs.androidx.compose.bom))
-        implementation(libs.bundles.androidx.compose)
-        debugImplementation(libs.androidx.compose.ui.tooling)
+        implementation(libs.androidx.compose.ui)
+        implementation(libs.androidx.compose.material3)
     }
 }
