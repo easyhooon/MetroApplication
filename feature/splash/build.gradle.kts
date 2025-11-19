@@ -12,6 +12,7 @@ android {
 
 dependencies {
     implementation(project(":core:di"))
+    implementation(project(":core:data-api"))
     implementation(project(":feature:screens"))
 
     implementation("androidx.core:core:1.13.1")

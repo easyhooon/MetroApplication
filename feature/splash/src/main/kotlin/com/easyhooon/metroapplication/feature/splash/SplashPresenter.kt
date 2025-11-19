@@ -1,6 +1,7 @@
 package com.easyhooon.metroapplication.feature.splash
 
 import androidx.compose.runtime.Composable
+import com.easyhooon.metroapplication.core.data.api.repository.UserRepository
 import com.easyhooon.metroapplication.feature.screens.SplashScreen
 import com.easyhooon.metroapplication.feature.screens.SplashUiState
 import com.slack.circuit.codegen.annotations.CircuitInject
@@ -14,6 +15,7 @@ import dev.zacsweers.metro.AssistedInject
 @AssistedInject
 class SplashPresenter(
     @Assisted private val navigator: Navigator,
+    private val userRepository: UserRepository,
 ) : Presenter<SplashUiState> {
 
     @CircuitInject(SplashScreen::class, AppScope::class)
