@@ -57,7 +57,6 @@ metro-android-application-compose = { id = "metro.android.application.compose", 
 metro-android-library = { id = "metro.android.library", version = "unspecified" }
 metro-android-library-compose = { id = "metro.android.library.compose", version = "unspecified" }
 metro-android-feature = { id = "metro.android.feature", version = "unspecified" }
-metro-metro = { id = "metro.metro", version = "unspecified" }
 
 [bundles]
 androidx-compose = [

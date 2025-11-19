@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.metro.android.application)
     alias(libs.plugins.metro.android.application.compose)
-    alias(libs.plugins.metro.metro)
+    alias(libs.plugins.metro)
     alias(libs.plugins.ksp)
 }
 
