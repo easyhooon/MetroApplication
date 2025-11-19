@@ -1,3 +1,8 @@
+rootProject.name = "MetroApplication"
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
+
 pluginManagement {
     includeBuild("build-logic")
     repositories {
@@ -19,19 +24,17 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-
-rootProject.name = "MetroApplication"
 include(":app")
 
 // Core modules
 include(":core:model")
 include(":core:common")
 include(":core:di")
-include(":core:datastore-api")
-include(":core:datastore-impl")
+include(":core:datastore:api")
+include(":core:datastore:impl")
 include(":core:network")
-include(":core:data-api")
-include(":core:data-impl")
+include(":core:data:api")
+include(":core:data:impl")
 include(":core:ocr")
 include(":core:designsystem")
 include(":core:ui")

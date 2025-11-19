@@ -25,7 +25,7 @@ android {
 
 dependencies {
     implementation(project(":core:di"))
-    implementation(project(":core:datastore-api"))
+    implementation(project(":core:datastore:api"))
 
     implementation("androidx.core:core:1.13.1")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")

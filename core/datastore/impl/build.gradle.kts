@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.easyhooon.metroapplication.core.data.impl"
+    namespace = "com.easyhooon.metroapplication.core.datastore.impl"
     compileSdk = 35
 
     defaultConfig {
@@ -24,7 +24,8 @@ android {
 
 dependencies {
     implementation(project(":core:di"))
-    implementation(project(":core:data-api"))
+    implementation(project(":core:datastore:api"))
 
     implementation("androidx.core:core:1.13.1")
+    implementation("androidx.datastore:datastore-preferences:1.1.1")
 }

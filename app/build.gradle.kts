@@ -40,11 +40,11 @@ ksp {
 dependencies {
     // Core modules
     implementation(project(":core:di"))
-    implementation(project(":core:datastore-api"))
-    implementation(project(":core:datastore-impl"))
+    implementation(project(":core:datastore:api"))
+    implementation(project(":core:datastore:impl"))
     implementation(project(":core:network"))
-    implementation(project(":core:data-api"))
-    implementation(project(":core:data-impl"))
+    implementation(project(":core:data:api"))
+    implementation(project(":core:data:impl"))
     implementation(project(":core:ocr"))
 
     // Feature modules
