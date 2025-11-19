@@ -48,3 +48,4 @@ kotlin-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "kotlinKtl
 # Convention plugins
 metro-android-application = { id = "metro.android.application", version = "unspecified" }
 metro-android-application-compose = { id = "metro.android.application.compose", version = "unspecified" }
+metro-android-library = { id = "metro.android.library", version = "unspecified" }
