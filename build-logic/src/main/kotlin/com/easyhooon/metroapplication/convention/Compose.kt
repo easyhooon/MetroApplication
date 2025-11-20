@@ -17,10 +17,6 @@ internal fun Project.configureCompose(
 
     configure<ComposeCompilerGradlePluginExtension> {
         includeSourceInformation.set(true)
-
-        stabilityConfigurationFiles.addAll(
-            rootProject.layout.projectDirectory.file("stability.config.conf")
-        )
     }
 
     dependencies {

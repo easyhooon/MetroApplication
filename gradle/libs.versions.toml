@@ -10,9 +10,6 @@ activityCompose = "1.10.1"
 composeBom = "2025.07.00"
 androidxDatastore = "1.1.7"
 gradleDependencyHandlerExtensions = "1.1.0"
-kotlinDetekt = "1.23.8"
-kotlinKtlintGradle = "11.6.1"
-kotlinKtlintSource = "0.50.0"
 
 [libraries]
 # Build-logic dependencies
@@ -42,8 +39,6 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 metro = { id = "dev.zacsweers.metro", version.ref = "metro" }
 gradle-dependency-handler-extensions = { id = "land.sungbin.dependency.handler.extensions", version.ref = "gradleDependencyHandlerExtensions" }
-kotlin-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "kotlinDetekt" }
-kotlin-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "kotlinKtlintGradle" }
 
 # Convention plugins
 metro-android-application = { id = "metro.android.application", version = "unspecified" }
