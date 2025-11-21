@@ -11,7 +11,7 @@ dependencies {
     implementations(
         projects.core.di,
         projects.core.datastore.api,
-
-        libs.androidx.datastore.preferences,
     )
+
+    api(libs.androidx.datastore.preferences)
 }
